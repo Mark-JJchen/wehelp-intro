@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Qualified Suppliers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href=".\do not delete\header.css">
+</head>
+<body>
+<style>
+.container{display:flex;justify-content: center}
+.result_list{display:flex;align-items: center;flex-direction:column;padding:10px}
+#out_district_id{border-bottom: 2px solid #009879}
+.container{height:40px}
+input{width:250px;font-size: 20px;}
+input::placeholder {
+  color: #c621aa;
+  font-style: italic;
+  opacity:0.4;
+}
+table{
+  font-family: 'Oswald', sans-serif;
+  border-collapse:collapse;
+}
+
+td:first-child{
+  border-left: none;
+}
+
+td{
+  background-color:#ffffff;
+  height:50px;
+  text-align:center;
+  padding:5px 10px;
+  border-left: 2px dotted #dddddd;
+}
+
+tr:last-of-type{
+  border-bottom: 3px outset #dddddd;
+}
+
+tr:nth-of-type(even) td{
+  background-color:#f3f3f3;
+}
+</style>
+<div class="listHead">
+  <div><a href="./供應商連結.html">供應商連結</a></div>
+  <div><a href="./待辦清單.html">代辦事項</a></div>
+  <div><a href="./效期管理.html">效期查詢</a></div>
+  <div><a href="./Markchen.html">首頁</a></div>
+</div>
+<div class='container'>
+    <select id='selection' onchange="changeGrading()">
+      <option>名稱查詢</option>  
+      <option>地址查詢</option> 
+    </select>
+    <input type="text" id='input_id' placeholder="例:默克">
+    <button id='search_id'>搜尋</button>
+</div>
+<div class='result_list'>
+  <span id='out_district_id'></span>
+  <table id='result_id'>
+  </table>
+</div>
+
+<!-- js -->
+<script src="./do not delete/QualifiedSupplier.js"></script>
+  <script>
+ 
+
+// 內文
+document.getElementById("search_id").onclick = function findStand() {
+  var selection = document.querySelector("select");
+  var inputItem = document.getElementById("input_id").value;
+  var out_district = document.getElementById("out_district_id");
+  var result_id = document.getElementById("result_id");
+  var str = "";
+  out_district.textContent = inputItem + " 的結果有";
+  if (selection.value === "名稱查詢") {
+    for (var i = 0; i < mfg_site.length; i++) {
+      // -1，表示找不到。
+      if (mfg_site[i].供應商名稱.indexOf(inputItem) != -1) {
+        str +=
+          "<tr>" +
+          "<td>" +
+          mfg_site[i].供應商名稱 +
+          "</td>" +
+          "<td>" +
+          mfg_site[i].製造廠地址 +
+          "</td>" +
+          "</tr>";
+      }
+    }
+    result_id.innerHTML = str;
+  }
+  if (selection.value === "地址查詢") {
+    for (var i = 0; i < mfg_site.length; i++) {
+      // -1，表示找不到。
+      if (mfg_site[i].製造廠地址.indexOf(inputItem) != -1) {
+        str +=
+          "<tr>" +
+          "<td>" +
+          mfg_site[i].供應商名稱 +
+          "</td>" +
+          "<td>" +
+          mfg_site[i].製造廠地址 +
+          "</td>" +
+          "</tr>";
+      }
+    }
+    result_id.innerHTML = str;
+  }
+  document.getElementById("input_id").value = "";
+};
+
+function changeGrading() {
+  let input = document.querySelector("input");
+  var selection = document.querySelector("select");
+  if (selection.value === "名稱查詢") {
+    input.placeholder = "例:默克";
+  } else {
+    input.placeholder = "例:84321";
+  }
+}
+var Pass = document.querySelector("#input_id");
+    Pass.addEventListener("keyup", function (event) {
+      event.preventDefault;
+      if (event.keyCode === 13) {
+        document.querySelector("#search_id").click();
+      }
+    });
+  </script>
+
+</body>
+</html>

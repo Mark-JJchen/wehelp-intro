@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- <link href="" rel="stylesheet" type="text/css" -->
+	<meta charset="utf-8">
+	</meta>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'> <!--控制網頁縮放-->
+	<link href="index.css" rel="stylesheet" type="text/css">
+	<title>Mark Chen first Web</title>
+</head>
+<script type="text/javascript">
+	var introduce = [{
+		編號: '1',
+		項目別: "自我介紹",
+		內文: `<textarea autofocus=false rows='7' cols='130' readonly>
+姓名:陳人榕
+年紀:32歲
+現任產業別:生技醫療產業
+職務:
+  原物料進出管控、物料需求規劃、帳務與統計作業、低溫設備保養維護、撰寫SOP及偏差文件，勞力與腦力活約各佔50%
+個性及興趣:
+  個性活潑樂愛交朋友，近年也嘗試培養不少新的興趣，如攝影、彈琴、路跑及健身。</textarea>
+<div style='display:flex;marginRight:10px'>
+	<div style='margin:10px 40px 0 200px'><img src="me1.jpg" height="400" width='500'></div>
+	<div style='margin:10px 10px'><img src="me2.jpg" height="400" width='500'></div>
+</div>
+	`
+	}, {
+		編號: '2',
+		項目別: "軟體工程師學習過程",
+		內文: `<textarea autofocus=true rows='15' cols='130' readonly>      	接觸過的語言:VBA、PYTHON、JAVASCRIPT、HTML、CSS、資料庫DB Browser
+
+學習起點:
+	因前份工作與軟體廠商接洽並在他的建議下初次接觸到程式，第一個學習的語言是VBA，覺得對新手蠻友善的，遇到無法克服的大部分用EXCEL內建錄製
+	巨集的功能，暴力法完成需求，先求有再求好，讓程式先執行起來，看到有成果，才讓我能一直保持學習的動力。
+課程學習:
+	*參加台灣大學資訊系統訓練班-林奇賦老師的Python程式設計
+	*Hahow教學平台購買兩堂PYTHON課程，分別為PYTHON資料處理及股票量化交易課程
+	*彭彭YOUTUBE會員教學影片
+程式能力:
+	起初為了研究股票整理類股資訊，自學PYTHON約一年，也將PYTHON強大的數據整理能力，運用在工作上彙整ERP報表專為主管要看的周、月報表上
+	半年前看了彭彭老師的YOUTUBE開始架設前端網頁，嘗試架網頁給同事們用，提升大家工作的效率，並由同事的反饋，逐一新增功能，由此正向循環
+	讓我對寫程式越來越有興趣，決定在而立之年後再為自己勇敢努力一次，踏上轉職之路，於是有了這個網站。
+
+專案成果在Work Tool分頁中，花最多心力的是待辦清單及效期管理</textarea>
+
+`
+	}, {
+		編號: '3',
+		項目別: "時間安排",
+		內文: `<textarea autofocus=true rows='3' cols='130' readonly>
+我是一個專注力不太夠的人，同時執行兩件事情會讓我的效率和專注度大幅下降。因我非常有心想要取得將網頁設計這項專業技能。
+已告知主管，表明了我對自己規劃，並打算在培訓課程開課前一周開始留職停薪。我將全心全意地投入學習。
+在寫程式和爬文研究相關資料經常不知不覺三小時就過了。我已經有心理準備，在培訓課程開始後我將投入70個小時以上的時間來學習程式語言。`
+	}, {
+		編號: '4',
+		項目別: "想加入的公司",
+		內文: `<textarea autofocus=true rows='7' cols='130' readonly>
+1. 先聊聊生技產業:我司為生物製劑公司，產品終端皆是要注射至人體內，故法律相關的規定相當嚴謹，
+   且常有各國政府機關及客戶的突擊稽核流程，但礙於法規目前大部分GMP(Good Manufacturing Practice)作業流程皆為”紙本作業”。
+2. 近兩年公司導入的輔助軟體，在與資訊軟體商接洽的過程讓我感覺可能是產業相差太多，對方皆無法高度理解我們的需求。
+   花了大筆金費購入的軟體卻沒有100%的實用。
+3. 現在腦子空有想法，但缺乏專業的技能來實踐它。透過這堂培訓課程我想將最符合部門作業的輔助工具導入，如原物料管控及庫房儲位管理系統
+4. 目前公司尚未有這方面的人才，所以我想繼續留在公司，協助製造部提升各項作業的效率，自己開發自己維護能更貼近同仁的作業日常，維護也能更加即時
+5. 未來希望與軟體商合作，透過API取得資料庫，將其各項數據轉換成圖像化的監控介面</textarea>`
+
+	}, {
+		編號: '5',
+		項目別: "如何克服困難",
+		內文: `<textarea autofocus=true rows='7' cols='130' readonly>
+    故事時間:
+2019年4月，前份工作在生產化妝品過程中，600公升均質機的均質頭斷裂，冷卻水沿著均質機跑進鍋爐內，致整批報廢。此時客戶還有多批貨尚未生產。因當時公司人力不足，一人身兼多職，先告知客戶此偏差事件、聯繫供應商延後原料進貨日、同時與台灣技師討論修繕及拆機，並緊急向德國原廠下訂零件。
+與技師攤開機台設計圖及爆炸圖，一項一項詢問零件的規格與作用及推估耗材所需的備品數量。原先對設備一竅不通，經過此事也對設備有了基本檢修的能力，對突發異常事件也不再害怕，更有經驗且有條理的去處理它，也慶幸事情發生在疫情前全球貨運還正常運作之時，零件下訂到台灣裝機完只花了兩個月，且客戶也同意此批訂單分批交貨，讓此事件完美落幕。
+這件事對我的影響深遠，曾經能自己處理完一件大案子，事後在學習新事物方面，也能給予自己大大的信心加成，相信自己努力一定能達成。</textarea>`
+	}, {
+		編號: '6',
+		項目別: "開發技術心得",
+		內文: `<textarea autofocus=true rows='7' cols='130' readonly>
+1.老師教學影片中PYTHON的Flask套件教學，透過傳送表單的方式讓前後端做互動流程:後端匯入Excel檔案，利用Pandas整理成數據庫，使用者在網站輸入要查詢的批號，透過Flask GET、POST的方法將資料送至後端，後端篩選完將值呈現於網頁上，再利用CSS將其頁面美化。
+2.因前端與後端要串接必須網站丟上網，網頁寫到一半與公司主管討論，怕有公司資料外洩的風險，加上自己沒有資安相關的知識，改為將所有數據以JSON格式儲存放在script中，只要將html檔案放在公司NAS中即可讓大家共用，數據庫維護更新也方便。
+3.寫程式好玩的點是，最首要的是將網頁能上線使用，再看一些教學文章或無意間看到別人的程式碼，就會蹦出新的想法，可能是程式碼的精簡化或是替換成新語法，持續優化讓自己有滿滿的成就感XDD
+			</textarea>`
+	}, {
+		編號: '7',
+		項目別: "想說的事情",
+		內文: "年過30對自己未有一技之長感到徬徨，加上明年要與女友結婚，想要跳脫舒適圈，讓自己勇敢一次<br/>半年沒收入，存款沒有持續增加就會沒安全感的我，已經做好全力以赴的準備了<br/><br/><div style='text-align:center'><u style='font-size: 40px;textAlign:center' >👉 👉我準備好了，錄取我吧！！👈 👈</u></div><br/><br/><div style='font-size: 14px;'> *Work Tool 裡面的資料因牽涉公司資料有簡化並亂序過<br/>效期查詢預設 帳號:1234 密碼:1234 </div>"
+	}];
+	function showcontent(number) {
+		var content = document.getElementById('container');
+		content.innerHTML = introduce[number - 1]['內文']
+	}
+	window.onload = () => {
+		var content = document.getElementById('container');
+		content.innerHTML = introduce[0]['內文'];
+	}
+
+</script>
+<style>
+
+</style>
+
+<body>
+	<div class="selectionList">
+		<nav class="menu">
+			<nav class="drop-down-menu">
+				<input type="checkbox" class="active" id="accord-1" name="accord-1">
+				<label for="accord-1" class="menu-title">Introduce</label>
+				<div class="drop-down">
+					<!-- 
+						&nbsp;半形的不換行空格，就是一般鍵盤上的空白鍵(space key)產生的空格
+  						&ensp;半形的空格，寬度是 1/2 個中文字寬度
+  						&emsp;全形的空格，寬度是 1 個中文字寬度
+					 -->
+					<a onclick="showcontent(1)">&nbsp;個人簡介</a>
+					<a onclick="showcontent(2)">&nbsp;軟體工程師學習過程</a>
+					<a onclick="showcontent(3)">&nbsp;時間安排</a>
+					<a onclick="showcontent(4)">&nbsp;想加入的公司</a>
+					<a onclick="showcontent(5)">&nbsp;如何克服困難</a>
+					<a onclick="showcontent(6)">&nbsp;開發技術心得</a>
+					<a onclick="showcontent(7)">&nbsp;想說的事情</a>
+				</div>
+			</nav>
+			<nav class="drop-down-menu">
+				<input type="checkbox" class="active" id="accord-2" name="accord-2">
+				<label for="accord-2" class="menu-title">Work Tool</label>
+				<div class="drop-down">
+					<a href="./效期管理.html">&nbsp;效期查詢</a>
+					<a href="./合格供應商.html">&nbsp;合格供應商</a>
+					<a href="./供應商連結.html">&nbsp;供應商連結</a>
+					<a href="./待辦清單.html">&nbsp;待辦清單</a>
+				</div>
+			</nav>
+			
+		</nav>
+		<div class="connectionMe">
+			<a href="https://www.facebook.com/renrong.chen"><img src="facebook.png" width="40" height="40"></a>
+			<a href="mailto:dragon072115@livemail.tw"><img src="email.png" width="40" height="40"></a>
+			<a href="https://www.instagram.com/markxdragon/"><img src="instagram.png" width="40" height="40"></a>
+		</div>
+	</div>
+	<div class="HomeScreen">
+		<div class="header">
+			<img src="./generatedtext.png">
+			<div class="title">
+				<div class="item" onclick="showcontent(1)">個人簡介</div>
+				<div class="item" onclick="showcontent(2)">學習過程</div>
+				<div class="item" onclick="showcontent(3)">時間安排</div>
+				<div class="item" onclick="showcontent(4)">想加入的公司</div>
+				<div class="item" onclick="showcontent(5)">克服困難</div>
+				<div class="item" onclick="showcontent(6)">開發心得</div>
+				<div class="item" onclick="showcontent(7)">想說的事情</div>
+			</div>
+		</div>
+		<div id="container">
+			<!-- <div class="content"></div> -->
+		</div>
+	</div>
+
+
+</body>
+
+</html>

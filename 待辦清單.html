@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Todolist</title>
+  <link rel="stylesheet" href="./do not delete/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f1e2d1;
+    }
+     /* toast */
+    .toast {
+      /* width: 100px; */
+      font-size: 24px;
+      border-radius: 5px;
+      padding: 5px;
+      background-color: rgb(199, 248, 203);
+      color: rgb(20, 192, 169);
+      font-weight: bold;
+      position: absolute;
+      left: 15%;
+      transform: translateY(-200%);
+      transition: transform 1.2s ease-out;
+    }
+
+    .toast.active {
+      transform: translateY(20%);
+    }
+
+    /*主欄位*/
+    .container {
+      /*   width: 400px; */
+      margin: 25px auto;
+      position: relative;
+      border-bottom: #807a7a dotted 1px;
+      width: 700px;
+    }
+
+    select {
+      outline: 0;
+      font-weight: bold;
+      border: 0;
+      background-color: #dfd4d4c9;
+    }
+
+    /* input-box */
+    h1 {
+      text-align: center;
+      font-size: 2.4rem;
+      letter-spacing: 3px;
+    }
+
+    .input-panel {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+    }
+
+    .input {
+      flex: 1;
+      padding: 10px 8px;
+      border-radius: 5px 0 0 5px;
+      border: 0;
+      outline: 0;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .DueDate {
+      background-color: #f5f2f2;
+      font-weight: bold;
+      color: #1a82c9;
+    }
+
+    p {
+      text-align: center;
+      padding: 4px;
+      margin: 0px;
+    }
+
+    .date {
+      width: 100px;
+      border: 0;
+      color: #b3304c;
+      background-color: #f5f2f2;
+    }
+
+    .add-btn {
+      border: 0;
+      border-radius: 0 5px 5px 0;
+      font-size: 1.8rem;
+      font-weight: 900;
+      cursor: pointer;
+      background-color: #36c5ad;
+      color: #fff;
+      width: 35px;
+    }
+
+    .add-btn:hover {
+      animation: flash;
+      animation-duration: 3s;
+      animate-repeat: 1;
+    }
+
+    .exportBtn {
+      position: absolute;
+      right: 0;
+      font-size: 20px;
+      top: 0px;
+      width: 80px;
+      text-align: right;
+      cursor: pointer;
+      transition: all 0.5s;
+      color: #e460c3bb;
+    }
+
+    .exportBtn:hover,
+    .saveBtn:hover {
+      background-color: #a1d2ee;
+      border-radius: 8px;
+    }
+
+    .saveBtn {
+      position: absolute;
+      right: 0;
+      font-size: 20px;
+      top: 38px;
+      width: 80px;
+      text-align: right;
+      cursor: pointer;
+      transition: all 0.5s;
+      color: #e460c3bb;
+    }
+
+    /* list */
+    ul {
+      padding-left: 0;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      background-color: #DCDCDC;
+      padding: 5px 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      height: 50px;
+      align-items: center;
+    }
+
+    .items {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    .dueDate {
+      position: absolute;
+      right: 55px;
+      font-size: 14px;
+      width: 40px;
+      color: #800808;
+      align-items: center;
+      padding-left: 5px;
+      border-left: #807a7a dashed 1px;
+    }
+
+    .delBtn {
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      font-size: 1.8rem;
+      font-weight: 900;
+      transition: all 0.3s;
+      color: rgba(165, 87, 196, 0.562);
+    }
+
+    .delBtn:hover {
+      color: #9215b1;
+    }
+
+    .important {
+      background-color: #fcfc187a;
+    }
+
+    .urgent {
+      background-color: #FF5959;
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8">
+    <title>Todolist</title>
+    <link rel="stylesheet" href="./do not delete/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  </head>
+    
+    <div class="listHead">
+      <div><a href="./合格供應商.html">合格供應商</a></div>
+      <div><a href="./供應商連結.html">供應商連結</a></div>
+      <div><a href="./效期管理.html">效期查詢</a></div>
+      <div><a href="./Markchen.html">首頁</a></div>
+    </div>
+     <div>
+      <div class="toast">
+      </div>
+    </div>
+    <div class="container">
+      <h1>待辦事項
+        <span class="exportBtn" onclick="exportBtn()">匯出⇝</span>
+        <span class="saveBtn" onclick="saveBtn()">儲存✉</span>
+      </h1>
+  
+      <div class="input-panel">
+        <input type="text" class="input" placeholder="請輸入待辦事項...">
+        <div class='DueDate'>
+          <p>Due Date</p>
+          <input type="date" class="date" value="">
+        </div>
+  
+        <select id="selection" onchange="changeGrading()">
+          <option>一般</option>
+          <option>重要</option>
+          <option>緊急</option>
+        </select>
+        <button class="add-btn" onclick="addAndSave()">+ </button>
+      </div>
+    </div>
+    <div class="container">
+      <ul class="list" id="list">
+      </ul>
+    </div>
+  <script>
+   var toast = document.querySelector(".toast");
+
+window.onload = function () {
+  // comeback.style.opacity = '0';
+  toastUp(toast, "! 歡迎回來 !");
+};
+function toastUp(x, y) {
+  x.textContent = y;
+  x.style.opacity = "1";
+  x.classList.add("active");
+  setTimeout(() => {
+    x.style.opacity = "0";
+    x.classList.remove("active");
+  }, 3500);
+}
+
+function add() {
+  let input = document.querySelector(".input");
+  let dueDate = document.querySelector(".date");
+  let list = document.querySelector(".list");
+  let li = document.createElement("li");
+  let span1 = document.createElement("span");
+  let span2 = document.createElement("span");
+  let delBtn = document.createElement("button");
+  let select = document.querySelector("select");
+  list.append(li);
+  li.append(span1);
+  li.append(span2);
+  li.append(delBtn);
+  li.contentEditable = true;
+  span1.textContent = input.value;
+  span1.classList.add("items");
+  span2.textContent = dueDate.value;
+  span2.classList.add("dueDate");
+  delBtn.onclick = deleteList;
+  delBtn.textContent = "X";
+  delBtn.classList.add("delBtn"); //新增class標籤
+  if (select.value === "重要") {
+    li.className += "important";
+  } else if (select.value === "緊急") {
+    li.className += "urgent";
+  }
+  input.value = "";
+}
+function deleteList() {
+  let delYes = confirm("確定完成了嗎?");
+  if (delYes) {
+    event.target.parentElement.remove();
+  }
+  saveBtn();
+  toastUp(toast, "恭喜完成一項任務");
+}
+function exportBtn() {
+  let exportBtn = document.querySelector(".exportBtn");
+  let list = document.querySelector(".list").children;
+  let text = "";
+  let num = 1;
+  for (var item of list) {
+    text = text + num.toString() + " : " + item.children[0].textContent + "\n";
+    num++;
+  }
+  alert("待辦事項:" + "\n" + text);
+}
+function saveBtn() {
+  let lists = document.querySelectorAll("#list li");
+  let data = [];
+  for (var list of lists) {
+    let listClassName = list.className;
+    let todo = list.children[0].textContent;
+    let todoClassName = list.children[0].className;
+    let dueDate = list.children[1].textContent;
+    let dueDateClassName = list.children[1].className;
+    let delBtn = list.children[2].textContent;
+    var Dict = {
+      listClassName: listClassName,
+      todo: todo,
+      todoClassName: todoClassName,
+      dueDate: dueDate,
+      dueDateClassName: dueDateClassName,
+      delBtn: delBtn
+    };
+    data.push(Dict);
+  }
+  localStorage.setItem("todolist", JSON.stringify(data)); //將物件轉換成字串
+  console.log(Dict);
+  toastUp(toast, "儲存成功!");
+}
+function changeGrading() {
+  let input = document.querySelector(".input");
+  let select = document.querySelector("select");
+  let grading = event.target.value;
+  if (grading == "一般") {
+    input.style.border = "2px solid transparent";
+    select.className = "";
+  }
+  if (grading == "重要") {
+    input.style.border = "2px solid #fcfc187a";
+    select.className = "important";
+  }
+  if (grading == "緊急") {
+    input.style.border = "2px solid #f7390ae7";
+    select.className = "urgent";
+  }
+}
+//將字串轉換成物件
+if (localStorage.getItem("todolist")) {
+  var data = JSON.parse(localStorage.getItem("todolist"));
+  var n = 0;
+  if (data.length > 0) {
+    // alert("歡迎回來");
+    for (var li of data) {
+      var li = document.createElement("li");
+      var span = document.createElement("span");
+      var span2 = document.createElement("span");
+      var list = document.querySelector("#list");
+      let delBtn = document.createElement("button");
+      list.append(li);
+      li.append(span);
+      li.append(span2);
+      li.append(delBtn);
+      li.contentEditable = true;
+      li.className = data[n].listClassName;
+      span.className = data[n].todoClassName;
+      span.textContent = data[n].todo;
+      span2.className = data[n].dueDateClassName;
+      span2.textContent = data[n].dueDate;
+      delBtn.textContent = data[n].delBtn;
+      delBtn.classList.add("delBtn");
+      delBtn.textContent = "X";
+      delBtn.onclick = deleteList;
+      n++;
+    }
+  }
+}
+function addAndSave() {
+  add();
+  saveBtn();
+}
+
+  </script>
+
+</body>
+
+</html>

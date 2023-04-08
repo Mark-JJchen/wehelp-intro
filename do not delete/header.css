@@ -1,0 +1,22 @@
+/* 表頭選單 */
+.listHead{
+    background-color: transparent;
+    outline: none;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 40px;
+  }
+  .listHead a{
+    margin-left: 40px;
+    text-decoration: none;
+    font-size: 16px;
+    width: 100px;
+    font-weight: bold;
+    color:#2e7ea0
+  }
+  .listHead>div:hover{
+    animation: heartBeat;
+    animation-duration: 6s;
+    animate-repeat: 2;
+  }
