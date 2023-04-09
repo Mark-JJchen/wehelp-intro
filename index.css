@@ -164,7 +164,7 @@ textarea {
     border: 2px rgba(185, 129, 7, 0.829) dashed;
     outline-color: transparent;
     padding: 20px;
-
+    width: 80vw;
     /* resize: none; */
 }
 
