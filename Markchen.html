@@ -49,14 +49,14 @@
 	}, {
 		編號: '3',
 		項目別: "時間安排",
-		內文: `<textarea autofocus=true rows='3' cols='130' readonly>
+		內文: `<textarea autofocus=true rows='5' cols='130' readonly>
 我是一個專注力不太夠的人，同時執行兩件事情會讓我的效率和專注度大幅下降。因我非常有心想要取得將網頁設計這項專業技能。
 已告知主管，表明了我對自己規劃，並打算在培訓課程開課前一周開始留職停薪。我將全心全意地投入學習。
 在寫程式和爬文研究相關資料經常不知不覺三小時就過了。我已經有心理準備，在培訓課程開始後我將投入70個小時以上的時間來學習程式語言。`
 	}, {
 		編號: '4',
 		項目別: "想加入的公司",
-		內文: `<textarea autofocus=true rows='7' cols='130' readonly>
+		內文: `<textarea autofocus=true rows='8' cols='130' readonly>
 1. 先聊聊生技產業:我司為生物製劑公司，產品終端皆是要注射至人體內，故法律相關的規定相當嚴謹，
    且常有各國政府機關及客戶的突擊稽核流程，但礙於法規目前大部分GMP(Good Manufacturing Practice)作業流程皆為”紙本作業”。
 2. 近兩年公司導入的輔助軟體，在與資訊軟體商接洽的過程讓我感覺可能是產業相差太多，對方皆無法高度理解我們的需求。
@@ -67,12 +67,14 @@
 
 	}, {
 		編號: '5',
-		項目別: "如何克服困難",
+		項目別: "如何處理負面情緒",
 		內文: `<textarea autofocus=true rows='7' cols='130' readonly>
-    故事時間:
-2019年4月，前份工作在生產化妝品過程中，600公升均質機的均質頭斷裂，冷卻水沿著均質機跑進鍋爐內，致整批報廢。此時客戶還有多批貨尚未生產。因當時公司人力不足，一人身兼多職，先告知客戶此偏差事件、聯繫供應商延後原料進貨日、同時與台灣技師討論修繕及拆機，並緊急向德國原廠下訂零件。
-與技師攤開機台設計圖及爆炸圖，一項一項詢問零件的規格與作用及推估耗材所需的備品數量。原先對設備一竅不通，經過此事也對設備有了基本檢修的能力，對突發異常事件也不再害怕，更有經驗且有條理的去處理它，也慶幸事情發生在疫情前全球貨運還正常運作之時，零件下訂到台灣裝機完只花了兩個月，且客戶也同意此批訂單分批交貨，讓此事件完美落幕。
-這件事對我的影響深遠，曾經能自己處理完一件大案子，事後在學習新事物方面，也能給予自己大大的信心加成，相信自己努力一定能達成。</textarea>`
+我喜歡把事情先計畫好，整個流程都能在我的掌控中，而工作必須要完全的配合產線生產，常會有緊急需求及各主管臨時交辦事項，
+接收到任務的當下我常會產生緊張及抗拒的心情，但工作任務必須使命必達，已經培養出能快速處理自己低落情緒的能力，
+閉上眼睛深呼吸個幾輪，泡杯咖啡，馬上就能回到工作狀態上，
+若整天面對的人事物皆不順遂的話，我會去跑步，流流汗，分泌巴多胺，累累的睡個覺，隔天起來不好的事情都忘得差不多了，
+我想這也是健忘的一個小小優點吧!
+    </textarea>`
 	}, {
 		編號: '6',
 		項目別: "開發技術心得",
@@ -84,7 +86,7 @@
 	}, {
 		編號: '7',
 		項目別: "想說的事情",
-		內文: "年過30對自己未有一技之長感到徬徨，加上明年要與女友結婚，想要跳脫舒適圈，讓自己勇敢一次<br/>半年沒收入，存款沒有持續增加就會沒安全感的我，已經做好全力以赴的準備了<br/><br/><div style='text-align:center'><u style='font-size: 40px;textAlign:center' >👉 👉我準備好了，錄取我吧！！👈 👈</u></div><br/><br/><div style='font-size: 14px;'> *Work Tool 裡面的資料因牽涉公司資料有簡化並亂序過<br/>效期查詢預設 帳號:1234 密碼:1234 </div>"
+		內文: "年過30對自己未有一技之長感到徬徨，加上明年要與女友結婚，想要跳脫舒適圈，讓自己勇敢一次<br/>半年沒收入，存款沒能逐月增加就會沒安全感的我，已經做好全力以赴的準備了<br/><br/><div style='text-align:center'><u style='font-size: 40px;textAlign:center' >👉 👉我準備好了，錄取我吧！！👈 👈</u></div><br/><br/><div style='font-size: 14px;'> *Work Tool 裡面的資料因牽涉公司資料有簡化並亂序過<br/>效期查詢預設 帳號:1234 密碼:1234 </div>"
 	}];
 	function showcontent(number) {
 		var content = document.getElementById('container');
@@ -116,7 +118,7 @@
 					<a onclick="showcontent(2)">&nbsp;軟體工程師學習過程</a>
 					<a onclick="showcontent(3)">&nbsp;時間安排</a>
 					<a onclick="showcontent(4)">&nbsp;想加入的公司</a>
-					<a onclick="showcontent(5)">&nbsp;如何克服困難</a>
+					<a onclick="showcontent(5)">&nbsp;如何處理負面情緒</a>
 					<a onclick="showcontent(6)">&nbsp;開發技術心得</a>
 					<a onclick="showcontent(7)">&nbsp;想說的事情</a>
 				</div>
@@ -147,7 +149,7 @@
 				<div class="item" onclick="showcontent(2)">學習過程</div>
 				<div class="item" onclick="showcontent(3)">時間安排</div>
 				<div class="item" onclick="showcontent(4)">想加入的公司</div>
-				<div class="item" onclick="showcontent(5)">克服困難</div>
+				<div class="item" onclick="showcontent(5)">處理負面情緒</div>
 				<div class="item" onclick="showcontent(6)">開發心得</div>
 				<div class="item" onclick="showcontent(7)">想說的事情</div>
 			</div>

@@ -7,7 +7,7 @@ body {
 /* 下拉選單區 */
 .selectionList {
     width: 170px;
-    height: auto;
+    height: 100vh;
     background: rgb(154, 228, 187);
     background: linear-gradient(0deg, rgba(167, 182, 231, 0.568) 0%, rgba(96, 243, 233, 0.384) 100%);    
     padding: 1px;
@@ -164,18 +164,18 @@ textarea {
     border: 2px rgba(185, 129, 7, 0.829) dashed;
     outline-color: transparent;
     padding: 20px;
-    width: 80vw;
+    width: 75vw;
     /* resize: none; */
 }
 @media (max-width:1600px){
     textarea {
-        font-size: 16px;
         width: 70vw;
     }
-    .selfie{height: 200px;width:200px}
+    .selfie{height: 300px;width:300px}
+    .selectionList {
+        height: 100vh;
+    }
 }
-/* .intro{
-    display:flex;
-    justify-content: center; 
-    align-items: center; 
-} */
+@media (max-height:900px){
+    .selfie{height: 300px;width:300px}
+}
