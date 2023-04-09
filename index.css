@@ -169,13 +169,8 @@ textarea {
 }
 @media (max-width:1600px){
     textarea {
-        line-height: 2.5;
-        font-size: 20px;
-        border: 2px rgba(185, 129, 7, 0.829) dashed;
-        outline-color: transparent;
-        padding: 20px;
-        width: 80vw;
-        /* resize: none; */
+        font-size: 16px;
+        width: 70vw;
     }
     .selfie{height: 200px;width:200px}
 }
